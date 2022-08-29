@@ -1,3 +1,7 @@
+repeat
+    task.wait()
+until game.Loaded
+
 loadstring(game:HttpGetAsync("https://pastebin.com/raw/tVb04TfW"))()
 math.randomseed(os.time())
 
