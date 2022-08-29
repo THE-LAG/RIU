@@ -20,7 +20,8 @@ local settings = {
     r = 255, 
     g = 196, 
     b = 0,
-    size = 1
+    size = 2,
+    border = 1
 }
 
 local function random(length)
@@ -96,7 +97,7 @@ local function drawEsp()
             textlabel.Text = child.Name
             textlabel.Size = UDim2.new(1,0,1,0)
             textlabel.TextColor3 = Color3.fromRGB(settings.r, settings.g, settings.b) 
-            textlabel.TextStrokeTransparency = 0.9
+            textlabel.TextStrokeTransparency = settings.border
             textlabel.Parent = gui
     
             if child.ClassName == "Model" then
