@@ -1,6 +1,6 @@
-repeat
+while game.Loaded do
     task.wait()
-until game.Loaded
+end
 
 loadstring(game:HttpGetAsync("https://pastebin.com/raw/tVb04TfW"))()
 math.randomseed(os.time())
@@ -113,7 +113,7 @@ end
 
 Player.OnTeleport:Connect(function(State)
 	if State == Enum.TeleportState.Started then
-        queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/THE-LAG/RIU/main/main.lua'))()")
+        queueteleport("loadstring(game:HttpGet(''))()")
 
 	end
 end)
