@@ -114,7 +114,7 @@ end
 
 Player.OnTeleport:Connect(function(State)
 	if State == Enum.TeleportState.Started then
-        queueteleport("loadstring(game:HttpGet(''))()")
+        queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/THE-LAG/RIU/main/main.lua'))()")
 
 	end
 end)
