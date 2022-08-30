@@ -14,7 +14,6 @@ local queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (f
 local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
 local spawnedItem : Folder = game:GetService("Workspace").Map.Items.SpawnedItems
 local itemToSearch = {}
-local charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
 
 local settings = {
     r = 255, 
@@ -24,15 +23,15 @@ local settings = {
     border = 1
 }
 
-local function random(length)
-    if length > 0 then
-        return random(length - 1) .. charset:sub(math.random(1, #charset), 1)
-    else
-        return ""
-    end
+function randomString(length)
+	local res = ""
+	for i = 1, length do
+		res = res .. string.char(math.random(97, 122))
+	end
+	return res
 end
 
-local espName = random(math.random(4,128))
+local espName = randomString(math.random(8,128))
 
 local function addToSet(set, key)
     set[key] = true
